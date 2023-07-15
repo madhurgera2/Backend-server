@@ -1,10 +1,13 @@
 const express = require('express')
 const app = express();
+let cors = require("cors");
+
 const Pizza = require("./models/pizzaModel")
 const User = require("./models/userModel")
 const Order = require("./models/orderModel")
 
 const db = require('./db')
+app.use(cors());
 app.use(express.json());
 
 const pizzasRoute = require('./routes/pizzasRoute')
